@@ -1,0 +1,31 @@
+{
+  "name": "hiot-server",
+  "version": "1.0.0",
+  "author": "Bernix01 <gbernal096@gmail.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "node .",
+    "run": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "NONE",
+  "private": true,
+  "dependencies": {
+    "@serialport/parser-readline": "^2.0.2",
+    "express": "^4.16.4",
+    "rpio": "^1.0.13",
+    "serialport": "^7.1.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/rpio": "^0.0.2",
+    "@types/serialport": "^7.0.1",
+    "@types/socket.io": "^2.1.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
+  }
+}
