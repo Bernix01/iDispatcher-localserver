@@ -1,3 +1,4 @@
 export default {
-  faucet: 19
+  faucet: 36,
+  pump: 38
 };

@@ -1,0 +1,33 @@
+export = readline;
+declare class readline {
+  constructor(options: any);
+  addListener(ev: any, fn: any): any;
+  cork(): void;
+  destroy(err: any, cb: any): any;
+  emit(type: any, ...args: any[]): any;
+  end(chunk: any, encoding: any, cb: any): void;
+  eventNames(): any;
+  getMaxListeners(): any;
+  isPaused(): any;
+  listenerCount(type: any): any;
+  listeners(type: any): any;
+  on(ev: any, fn: any): any;
+  once(type: any, listener: any): any;
+  pause(): any;
+  pipe(dest: any, pipeOpts: any): any;
+  prependListener(type: any, listener: any): any;
+  prependOnceListener(type: any, listener: any): any;
+  push(chunk: any, encoding: any): any;
+  read(n: any): any;
+  removeAllListeners(type: any, ...args: any[]): any;
+  removeListener(type: any, listener: any): any;
+  resume(): any;
+  setDefaultEncoding(encoding: any): any;
+  setEncoding(enc: any): any;
+  setMaxListeners(n: any): any;
+  uncork(): void;
+  unpipe(dest: any): any;
+  unshift(chunk: any): any;
+  wrap(stream: any): any;
+  write(chunk: any, encoding: any, cb: any): any;
+}

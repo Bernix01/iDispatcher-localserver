@@ -12,7 +12,7 @@ export const setupRfidReceiver = (comChannel: SocketIO.Server): net.Server => {
     client.on("data", (chunk: string) => {
       if (chunk.match(/\r\n$/)) {
         const data = chunks.join("");
-        comChannel.emit("login", data);
+        comChannel.emit("LOGIN", data);
       }
     });
   });
