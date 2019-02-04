@@ -1,6 +1,6 @@
 import express from "express";
 import SocketIO from "socket.io";
-import { Hardware } from "./hardware";
+import Hardware from "./hardware";
 
 const app = express();
 const port = 3000;
@@ -14,12 +14,8 @@ const httpServer = app.listen(port, () => {
 
 // Socket.io
 const io = SocketIO(httpServer);
-io.on("connection", () => {
-    // tslint:disable-next-line:no-console
-    console.log("a user connected");
-});
 
 // Hio specific
-const hio = new Hardware();
+const hio = Hardware();
 hio.use(io);
 hio.bootstrap();
