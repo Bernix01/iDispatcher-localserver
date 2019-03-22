@@ -33,6 +33,7 @@ export class Scale {
       if (!this.comChannel) {
         return;
       }
+      this.online = true;
       this.comChannel.emit("SCALE", data);
     });
     this.emitStatus();

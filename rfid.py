@@ -27,6 +27,7 @@ while stp:
   sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
   try:
       sock.connect(server_address)
+      stp = True
   except socket.error:
       tries_done += 1
       print('Could not connect for {} time(s).'.format(tries_done))
@@ -49,10 +50,10 @@ while True:
           print("Reading block 10: " + rfid_data)
           if rfid_data:
             msg = rfid_data.encode('UTF-8')
-            sock.send(uid)
-            sock.send(b"\r\n")
+            sock.send((str(uid) + '\n').encode('UTF-8'))
           # Always stop crypto1 when done working
           rdr.stop_crypto()
+  sleep(3)
 sock.close()
 # Calls GPIO cleanup
 rdr.cleanup()
